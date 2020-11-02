@@ -2,10 +2,10 @@
 ### Concepts
 
 - Use recursion to solve 
-    - Each node in the recursion tree is a function call, asking for information revursively
+    - Each node in the recursion tree is a function call, asking for information recursively
     - Base case is always null
     - Consider
-        - What do i want to ask my children
+        - What do I want to ask my children
         - what do I do with the answer from my children
         - what do I return to my parents
     - **How to analyze Big-O complexity**
@@ -51,7 +51,7 @@ isBalanced(rightChild)
 ```
 The input tree is the recursion tree (check parameter), there are n node in the recursion tree. At each node, the time complexity is O(2n) because of 2 getHeight() call (each is O(n)). Space is the height of the tree, which is O(n) in worst case
 **Time:** O(nlogn)
-**Space:** O(n)
+**Space:** O(height)
 
 ### isSymmetrical
 The input tree is different from recursion tree. To check if a tree is symmetrical, we need to take two nodes for comparison. Root node is the left and right child of the input root. There are four cases:
