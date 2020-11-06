@@ -1,4 +1,4 @@
-### Heap
+# Heap
 - Heap is a complete binary tree
 - The root is a max or min among the nodes values
 ##### Implementation
