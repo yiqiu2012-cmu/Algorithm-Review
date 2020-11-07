@@ -256,6 +256,43 @@ public TreeNode insert(TreeNode root, int val) {
         - 4.1 the root.right has no left children --> root.right is the smallest in right subtree, take over root.left, append root.right
         - 4.2 root.right has left chidren, search through root.left subtree, find the node that has no left children, append node.right, take over root.left, root.right.right, append node
 
+### Max sum path
+Clarification:
+    input: root
+    output: max sum from one node to another
+Assumption:
+    if root == null, return special value --> Integer.MIN_VALUE because max sum might be negative number
+Reasoning:
+High-level: Use recursion to solve tree porblem
+Mid-level: 
+1. What to ask from my left and right child
+- the max sum from root to leaf
+2. What to do at current level
+- calculate leftmax + rightmax + rootval, update globalMax as needed (this is because the root does not need to be included in the path)
+3. What to return to my parent
+- max(left, right) + node.val
 
+There are two types of problem having different requirements
+1. The path must be from a leaf node to another leaf node
+2. The path can be from any node to any node
 
+For type 1:
+1.  What to ask from my left and right child
+left and right must include leaf node, therefore they are simply the return value of helper
+2. What to do at current level
+only when both root.left and root.right are non-null can we calculate left + right + node.val and update globalmax
+3. What to return to my parent
+for the case where one of the child nodes is null, return the other path to parent.
+when both are non-null, return max(left, right) + node.val
 
+For type 2: 
+1.  What to ask from my left and right child
+The path does not need to include leaf, therefore, can start from current root
+```
+left = max(helper(), 0)
+right = max(helper(), 0)
+```
+2. What to do at current level
+add left, right, node.val and update globalmax discriminatively
+3. What to return to my parent
+max(left, right) + node.val
