@@ -1,5 +1,8 @@
 # Binary Tree
 ### Concepts
+**Binary search tree:** binary tree in which for every single node, the values in its left subtree are all smaller than its value, and the values in its right subtree are all larger than its value
+**Balanced binary tree:** binary tree in which the height of left and right subtree of every node differ by 1 or less
+**Complete binary tree:** a binary tree in which every level, except possibly the last, is completely filled, and all the nodes are as far left as possible
 
 - Use recursion to solve 
     - Each node in the recursion tree is a function call, asking for information recursively
