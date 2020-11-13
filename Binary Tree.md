@@ -301,3 +301,9 @@ right = max(helper(), 0)
 add left, right, node.val and update globalmax discriminatively
 3. What to return to my parent
 max(left, right) + node.val
+
+### Check complete tree
+**data structure:** queue, bool flag (queue can not contain null)
+initilization: put the root node into the queue
+**expansion and generation rule:**
+expand the node, check its left and right child, if neither is null nor flag is true, enqueue. If the child is null, set the flag to true, if the child is non-null and the flag is true, return false
