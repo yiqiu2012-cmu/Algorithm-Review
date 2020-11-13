@@ -27,6 +27,22 @@ Final score = TF * IDF
 
 Once a user favorite an item, we wiil store the item into MySQL database. MySQL is an open-source relational database management system (RDBMS).
 
+**How we filter out recommended result**
+Given a user, get all the events (ids) this user has favorited.
+```
+history: history_id, user_id, item_id, last_favor_time.
+Set<String> itemIds = connection.getFavoriteItemIds(userId);
+```
+Given all these events, get their keywords and sort by count.
+```
+keywords: item_id, keyword.
+Set<String> keywords = connection.getKeywords(itemId);
+```
+Given these categories, use Github Job API with keyword, then filter out user favorited events.
+
+# Spring Shopping cart
+Use Spring framework to initialize all Java classes(annotation-based) becasue Spring helps reduce dependency and increase code modularity
+
 
 
 
