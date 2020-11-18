@@ -6,11 +6,17 @@ two pointers, when to move right, when to move left, (these two are determined b
 **subsequence: non-consecutive
 
 **data structure:**
+
 Set<Integer>: contains all the non-repeating characters in the substring
+    
 window: [slow, fast) or [slow, fast - 1]
+
 slow pointer: move left pointer when array[fast] points to a char that is already in set
+
 fast pointer: move fast pointer when array[fast] points to a char that is not in set
+
 global longest: update global longest when move either of the pointers longest = Math.max(longest, fast - slow)
+
 ```
 public int lengthOfLongestSubstring(String s) {
     if (s == null || s.length() == 0) {
@@ -34,10 +40,13 @@ public int lengthOfLongestSubstring(String s) {
     }
 ```
 **Time:** O(n), each element will be visited once by slow and fast
+
 **Space:** 0(min(m,n)), m size of window, n size of array
 
 ### Group Anagram
+
 **data structure**: 
+
 - Map<String, List<String>>
 - char[26] ca: for each char c in String s, set ca[c- 'a'] to 1, then use String.valueOf(ca) to generate String
 
