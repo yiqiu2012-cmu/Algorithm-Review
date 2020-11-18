@@ -56,7 +56,7 @@ private int helper(TreeNode root, int[] global) {
 ```
 ### Math Sum Path (leaf to root)
 ##### Prefix sum approach
-信息至上而下传递，在每一层都先update信息，把update好的信息传入下一层recursion call, 只在base case return信息
+信息至上而下传递并update，再自下而上返回的过程。在每一层都先update信息，把update好的信息传入下一层recursion call, 只在base case return信息
 Pass a prefix sum from root to left, update along the way, return at leaf node. Prefix sum contains the sum of the nodes on a single path from root to current node, excluding current node
 
  **1. What to ask from your left and right child**
