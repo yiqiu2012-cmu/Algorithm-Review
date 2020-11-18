@@ -4,7 +4,9 @@
 Two Sum uses a hashmap to find complement values, and therefore achieves O(N) time complexity.
 
 **data structure:** Map<Value, indice> or Set<Integer>
-**if return wants true/false, use set, if want indices, use map
+    
+**if return wants true/false, use set, if want indices, use map**
+
 traverse through the input array, check if target - a[i] in map, if so, return true. Else put <a[i], i> in
 ```
 class Solution {
@@ -32,7 +34,9 @@ Time: O(n)
 Space: O(n) worst case
 
 ### Approach #2: Sort the array first and use two pointers moving towrad each other
+
 Two Sum II uses the two pointers pattern and also has O(n) time complexity for a sorted array. We can use this approach for any array if we sort it first, which bumps the time complexity to O(nlogn).
+```
 int left = 0;
 int right = array.length - 1
 while(left < right) { //must be < because i needs to be different from j to have two different numbers
@@ -42,8 +46,12 @@ while(left < right) { //must be < because i needs to be different from j to have
     case3 a[i] + a[j]  > target
             j--;
 }
+```
+
 **This approach only works when return true/false, because we are changing the order of the orginal array
+
 Time: O(n) if sorted, O(nlogn + n) if unsorted
+
 Space: O(1)
 
 ### 3 Sum
@@ -97,6 +105,7 @@ class Solution {
 }
 ```
 Time Complexity: O(n^2), twosum is O(n), and we call it n times for each element in the array
+
 Space Complexity: O(1)
 
 ### 3 SUM CLOSEST
