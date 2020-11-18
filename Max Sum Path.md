@@ -59,7 +59,7 @@ private int helper(TreeNode root, int[] global) {
 信息至上而下传递并update，再自下而上返回的过程。在每一层都先update信息，把update好的信息传入下一层recursion call, 只在base case return信息
 Pass a prefix sum from root to left, update along the way, return at leaf node. Prefix sum contains the sum of the nodes on a single path from root to current node, excluding current node
 
- **1. What to ask from your left and right child**
+**1. What to ask from your left and right child**
 left: max single path in my left subtree from root to leaf
 right: max single path in my right subtree from root to leaf
 
@@ -88,8 +88,9 @@ base cases:
  }
  ```
  ##### Suffix sum approach
- 信息只下而上传递，在base case return 0, 在每一层先call recursion在从用返回的结果update信息
-  **1. What to ask from your left and right child**
+ 信息自下而上传递，在base case return 0, 在每一层先call recursion在从用返回的结果update信息
+ 
+**1. What to ask from your left and right child**
 left: max single path in my left subtree from root to leaf
 right: max single path in my right subtree from root to leaf
 
