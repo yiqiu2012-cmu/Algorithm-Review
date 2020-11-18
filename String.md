@@ -2,7 +2,9 @@
 two pointers, when to move right, when to move left, (these two are determined by the condition of the substring) when to stop (usually when fast is out of bound)
 
 ### Longest substring without repeating charater
-**substring: consecutive 
+
+**substring: consecutive
+
 **subsequence: non-consecutive
 
 **data structure:**
