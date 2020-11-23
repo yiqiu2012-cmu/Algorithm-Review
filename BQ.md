@@ -115,7 +115,28 @@ Flow data-- the current condition of the flow.
 FlowHandlerMapping读取flow registry, 知道flow是如何定义、在哪里定义的, 这相当于一种映射过程；
 FlowHandlerMapping将具体的处理工作交给FlowHandlerAdapter, FlowHandlerAdapter调用请求flowexecutor执行具体的flow请求.
 
+# Android
+**Activity** is an application component that provides a screen with which users can interact in order to do something, such as dial the phone, take a photo, send an email, or view a map. Each activity is given a window in which to draw its user interface. The window typically fills the screen, but may be smaller than the screen and float on top of other windows.
+As a user navigates through, out of, and back to your app, the Activity instances in your app transition through different states in their lifecycle. The Activity class provides a number of callbacks that allow the activity to know that a state has changed. Each callback allows you to perform specific work that's appropriate to a given change of state.
+### LifeCycle
+https://developer.android.com/guide/components/activities/activity-lifecycle#oncreate
+**onCreate()**
 
+when your first start an activity, basic logic setup, happen once for entire lifecycle
+
+**onStart()**
+
+ onStart() call makes the activity visible to the user, as the app prepares for the activity to enter the foreground and become interactive. For example, this method is where the app initializes the code that maintains the UI.
+
+**onResume()**
+When the activity moves to the resumed state, any lifecycle-aware component tied to the activity's lifecycle will receive the ON_RESUME event. This is where the lifecycle components can enable any functionality that needs to run while the component is visible and in the foreground, such as starting a camera preview.
+
+**onPause()**
+
+When an interruptive event occurs, the activity enters the Paused state, and the system invokes the onPause() callback.
+
+**Multi-fragment UI**
+Bottom navigation activity with three fragments
 
 
 
